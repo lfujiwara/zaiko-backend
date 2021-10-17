@@ -29,8 +29,8 @@ namespace Zaiko.Services
 
         public async Task<PagedQueryResponse<ProductDTO>> GetProducts(PagedQueryParams _params)
         {
-            var skip = (_params.Page - 1) * _params.PageSize;
-            var take = _params.PageSize;
+            var skip = Math.Max((_params.Page - 1) * _params.PageSize, 0);
+            var take = Math.Clamp(_params.PageSize, 1, 100);
             var result = await this._context.ProductList.AsQueryable().Skip(skip).Take(take).ToAsyncEnumerable().ToArrayAsync();
             var resultDTO = new PagedQueryResponse<ProductDTO>
             {

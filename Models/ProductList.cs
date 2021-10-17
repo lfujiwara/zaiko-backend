@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Zaiko.Models
 {
     public abstract class ProductList
@@ -10,5 +12,7 @@ namespace Zaiko.Models
         }
 
         public abstract int GetProductQuantity(Product p);
+
+        public abstract IEnumerable<ProductListEntry> GetProductList();
     }
 }

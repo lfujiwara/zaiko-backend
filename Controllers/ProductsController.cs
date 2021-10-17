@@ -22,7 +22,8 @@ namespace Zaiko.Controllers
         }
 
         [HttpGet]
-        public async Task<PagedQueryResponse<ProductDTO>> Get([FromQuery(Name = "name")] string name, [FromQuery(Name = "page")] string _page, [FromQuery(Name = "pageSize")] string _pageSize)
+        public async Task<PagedQueryResponse<ProductDTO>> Get([FromQuery(Name = "name")] string name,
+            [FromQuery(Name = "page")] string _page, [FromQuery(Name = "pageSize")] string _pageSize)
         {
             _logger.Log(LogLevel.Debug, name);
             int.TryParse(_page, out var page);

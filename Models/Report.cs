@@ -40,5 +40,10 @@ namespace Zaiko.Models
             if (entry is null) Entries.Add(new ProductListEntry(p, quantity));
             else entry.Quantity = quantity;
         }
+
+        public override IEnumerable<ProductListEntry> GetProductList()
+        {
+            return Entries.ToArray();
+        }
     }
 }

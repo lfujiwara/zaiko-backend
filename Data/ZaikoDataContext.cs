@@ -13,5 +13,6 @@ namespace Zaiko.Data
             => builder.UseInMemoryDatabase("ZaikoDB");
 
         public DbSet<Product> ProductList { get; private set; }
+        public DbSet<Sheet> SheetDbSet { get; private set; }
     }
 }

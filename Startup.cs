@@ -35,6 +35,7 @@ namespace Zaiko
             });
             services.AddDbContext<ZaikoDataContext>();
             services.AddTransient<Zaiko.Services.ProductsService>();
+            services.AddTransient<Zaiko.Services.SheetsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
